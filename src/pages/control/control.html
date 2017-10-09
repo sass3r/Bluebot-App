@@ -1,0 +1,47 @@
+<!--
+  Generated template for the Control page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Control Remoto</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+      <ion-item>
+	<ion-label>Seleccion dispositivo:</ion-label>
+	<ion-select  [(ngModel)]="serialSelected">
+	  <ion-option  *ngFor="let device of dispositivos;" value="{{device.address}}">{{device.name}}</ion-option>
+	</ion-select>
+      </ion-item>
+    </ion-list>
+
+    <button ion-button [color]="buttonColor" (click)="conectar(serialSelected)">{{buttonName}}</button>
+    <span>{{connStatus}}</span>
+
+    <ion-grid>
+        <ion-row>
+            <button ion-button (click)="adelante()">Adelante</button>
+        </ion-row>
+        <ion-row>
+            <button ion-button (click)="izquierda()">Izquierda</button>
+            <button ion-button (click)="derecha()">Derecha</button>
+        </ion-row>
+        <ion-row>
+            <button ion-button (click)="retroceder()">Atras</button>
+        </ion-row> 
+        <ion-row>
+            <button ion-button (click)="abrirPinza()">Abrir Pinza</button>
+            <button ion-button (click)="cerrarPinza()">Cerrar Pinza</button>
+        </ion-row>
+    </ion-grid>/home/archy/nodeProjects/Ionic2/Bluebot/platforms/android/build/outputs/apk/android-debug.apk
+
+
+</ion-content>
